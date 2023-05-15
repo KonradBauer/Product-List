@@ -1,7 +1,16 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after ::before {
+  box-sizing: inherit;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
-  color: #384a5c
+  color: #384a5c;
   background-color: #f5f8fa;
 }
 
@@ -26,41 +35,46 @@ body {
 }
 
 .mainContainer__list {
+  padding: 20px;
   grid-area: 1 / 1 / 3 / 3;
   background-color: white;
-  height: 250px;
+  height: 220px;
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 .mainContainer__table {
+  padding: 20px;
   grid-area: 1 / 3 / 3 / 7;
   background-color: white;
-  height: 250px;
+  height: 220px;
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 .mainContainer__product {
+  padding: 20px;
   grid-area: 3 / 1 / 5 / 3;
   background-color: white;
-  height: 250px;
+  height: 220px;
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 .mainContainer__product--2 {
+  padding: 20px;
   grid-area: 3 / 3 / 5 / 5;
   background-color: white;
-  height: 250px;
+  height: 220px;
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 .mainContainer__product--3 {
+  padding: 20px;
   grid-area: 3 / 5 / 5 / 7;
   background-color: white;
-  height: 250px;
+  height: 220px;
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
