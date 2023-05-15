@@ -30,7 +30,16 @@
     <MainContainer class="mainContainer">
       <div class="mainContainer__list">
         <div class="tilesHeaderStyles"><span>Lista todo</span><span>Wykonane: 0</span></div>
-        <input class="input" type="text" placeholder="+ Dodaj nowy element checklisty" />
+        <div class="inputContainer">
+          <button class="button">+</button>
+          <input
+            class="input"
+            type="text"
+            placeholder="Dodaj nowy element checklisty"
+            autofocus
+            required
+          />
+        </div>
       </div>
       <div class="mainContainer__table"><div class="tilesHeaderStyles">Lista produktów</div></div>
       <div class="mainContainer__product">
