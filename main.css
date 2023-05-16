@@ -12,6 +12,7 @@ body {
   font-size: 14px;
   color: #384a5c;
   background-color: #f5f8fa;
+  word-break: break;
 }
 
 .h1 {
@@ -45,10 +46,11 @@ body {
   color: #333;
 }
 
-.mainContainer__list-header {
+/* .mainContainer__list--header {
   display: flex;
   flex-flow: row wrap;
-}
+  justify-content: space-between;
+} */
 
 .mainContainer__table {
   padding: 20px;
@@ -59,7 +61,7 @@ body {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 
-.mainContainer__table-header {
+.mainContainer__table--header {
   color: #333;
   font-weight: bold;
 }
