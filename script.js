@@ -9,13 +9,27 @@
         <li class="mainContainer__li 
         ${task.done ? "mainContainer__li--done" : ""}"
         >
-        <span class="ul__checkbox"></span>
+        <span class="ul__checkbox js-toggleDone"></span>
         ${task.content}
         </li>
         `;
     }
 
     document.querySelector(".js-list").innerHTML = contentString;
+
+    const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
+
+    toggleDoneButtons.forEach((toggleDoneButton, index) => {
+      toggleDoneButton.addEventListener("click", () => {
+        toggleTaskDone(index);
+      });
+    });
+  };
+
+  const toggleTaskDone = (index) => {
+    tasks[index].done = !tasks[index].done;
+
+    render();
   };
 
   const addTask = (newTaskContent) => {
