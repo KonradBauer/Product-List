@@ -12,7 +12,7 @@ body {
   font-size: 14px;
   color: #384a5c;
   background-color: #f5f8fa;
-  word-break: break;
+  word-break: break-all;
 }
 
 .h1 {
