@@ -1,0 +1,17 @@
+{
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "git.suggestSmartCommit": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 100,
+  "totalTypeScript.hideAllTips": false,
+  "totalTypeScript.hideBasicTips": false,
+  "totalTypeScript.hiddenTips": ["variable-type-annotation", "basic-types", "any-type"],
+  "eslint.workingDirectories": []
+}
