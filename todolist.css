@@ -4,7 +4,7 @@
   outline: none;
 }
 
-.mainContainer__list-inputContainer {
+.mainContainer__form-inputContainer {
   position: absolute;
   width: 90%;
   margin-top: 20px;
@@ -43,7 +43,11 @@
   gap: 5px;
   border-bottom: 1px solid #384a5c;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 10px;
+}
+
+.li__content {
+  display: flex;
 }
 
 .ul__checkbox {
