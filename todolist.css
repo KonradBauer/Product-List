@@ -4,10 +4,13 @@
   outline: none;
 }
 
-.mainContainer__form-inputContainer {
+.mainContainer__form {
+  padding: 10px;
+}
+
+.form__inputContainer {
   position: absolute;
   width: 90%;
-  margin-top: 20px;
   bottom: 0;
   margin-bottom: 20px;
 }
@@ -36,15 +39,17 @@
 }
 
 .mainContainer__li {
-  width: 110%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 5px;
   border-bottom: 1px solid #384a5c;
-  margin-bottom: 10px;
   padding: 10px;
+}
+
+.mainContainer__li--done {
+  text-decoration: line-through;
 }
 
 .li__content {
