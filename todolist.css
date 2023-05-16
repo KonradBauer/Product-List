@@ -36,6 +36,7 @@
 }
 
 .mainContainer__li {
+  width: 110%;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
