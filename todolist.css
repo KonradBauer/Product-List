@@ -14,6 +14,7 @@
 
 .inputContainer__button {
   border: none;
+  outline: none;
   background: none;
   cursor: pointer;
   transition: 0.2s;
@@ -25,4 +26,32 @@
 
 .inputContainer__button:active {
   transform: scale(1.5);
+}
+
+.mainContainer__ul {
+  color: #384a5c;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.mainContainer__li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  border-bottom: 1px solid #384a5c;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.ul__checkbox {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #384a5c;
+  cursor: pointer;
 }
