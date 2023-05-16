@@ -1,8 +1,16 @@
-.mainContainer__list-header {
+.mainContainer__list--header {
   color: #333;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+}
+
+.mainContainer__product {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: #333;
+  font-weight: bold;
 }
 
 .mainContainer__product--2 {
@@ -13,7 +21,7 @@
   font-weight: bold;
 }
 
-mainContainer__product--3 {
+.mainContainer__product--3 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
