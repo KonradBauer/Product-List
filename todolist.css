@@ -1,9 +1,10 @@
-.input {
+.inputContainer__input {
   width: 80%;
   border: none;
+  outline: none;
 }
 
-.inputContainer {
+.mainContainer__list-inputContainer {
   position: absolute;
   width: 90%;
   margin-top: 20px;
@@ -11,17 +12,17 @@
   margin-bottom: 20px;
 }
 
-.button {
+.inputContainer__button {
   border: none;
   background: none;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.button:hover {
+.inputContainer__button:hover {
   transform: scale(2);
 }
 
-.button:active {
+.inputContainer__button:active {
   transform: scale(1.5);
 }

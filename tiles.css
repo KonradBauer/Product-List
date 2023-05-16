@@ -1,11 +1,19 @@
-.tilesHeaderStyles {
+.mainContainer__list-header {
   color: #333;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
 }
 
-.productHeader {
+.mainContainer__product--2 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: #333;
+  font-weight: bold;
+}
+
+mainContainer__product--3 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -17,24 +25,24 @@
   text-align: center;
 }
 
-.content h3 {
+.content .content__title {
   text-align: left;
   margin: 0 0 15px;
   font-size: 14px;
 }
 
-.content img {
+.content .content__image {
   display: block;
   margin: 0 auto;
 }
 
-.content .promoPrice {
+.content .content__promoPrice {
   text-align: center;
   color: #333;
   font-weight: bold;
 }
 
-.content .price {
+.content .content__price {
   text-align: center;
   text-decoration: line-through;
 }
