@@ -30,23 +30,25 @@
     <h1 class="h1">Muscode App</h1>
     <MainContainer class="mainContainer">
       <div class="mainContainer__list">
-        <div class="mainContainer__list-header">
+        <div class="mainContainer__list--header">
           <span>Lista todo</span><span>Wykonane: 0</span>
-          <ul class="mainContainer__ul js-list"></ul>
         </div>
-        <form class="mainContainer__form-inputContainer">
-          <button class="inputContainer__button">+</button>
-          <input
-            class="inputContainer__input"
-            type="text"
-            placeholder="Dodaj nowy element checklisty"
-            autofocus
-            required
-          />
+        <ul class="mainContainer__ul js-list"></ul>
+        <form class="mainContainer__form js-form">
+          <div class="form__inputContainer">
+            <button class="inputContainer__button">+</button>
+            <input
+              class="inputContainer__input js-newTask"
+              type="text"
+              placeholder="Dodaj nowy element checklisty"
+              autofocus
+              required
+            />
+          </div>
         </form>
       </div>
       <div class="mainContainer__table">
-        <div class="mainContainer__table-header">Lista produktów</div>
+        <div class="mainContainer__table--header">Lista produktów</div>
       </div>
       <div class="mainContainer__product">
         <content class="content">
