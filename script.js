@@ -9,7 +9,9 @@
         <li class="mainContainer__li 
         ${task.done ? "mainContainer__li--done" : ""}"
         >
-        <span class="ul__checkbox js-toggleDone"></span>
+        <span class="ul__checkbox js-toggleDone ${task.done ? "ul__checkbox--done" : ""}">${
+        task.done ? "✔️" : ""
+      }</span>
         ${task.content}
         </li>
         `;
