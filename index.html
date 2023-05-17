@@ -88,7 +88,26 @@
           width="40%"
           alt="iPhone 6s Plus 16GB"
         />
-        <form></form>
+        <form class="modalForm">
+          <div class="modalLabel">
+            <label>Nazwa produktu</label>
+            <input class="modalInput" />
+          </div>
+          <div class="modalLabel">
+            <label>Cena</label>
+            <input class="modalInput" />
+            <div class="modalLabel">
+              <label>Promocyjna cena</label>
+              <input class="modalInput" />
+            </div>
+          </div>
+          <label for="currencies">Waluta:</label>
+          <select name="currencies" class="modalSelect">
+            <option value="rate">$</option>
+            <option value="rate">PLN</option>
+            <option value="rate">EUR</option>
+          </select>
+        </form>
         <div class="modalButtons">
           <button class="saveModalButton">Zapisz</button>
           <button class="denyModalButton">Anuluj</button>
