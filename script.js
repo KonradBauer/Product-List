@@ -7,6 +7,18 @@
     render();
   };
 
+  const countDoneTasks = () => {
+    let count = 0;
+
+    for (const task of tasks) {
+      if (task.done) {
+        count++;
+      }
+    }
+
+    document.querySelector(".js-doneTaskCount").innerText = +count;
+  };
+
   const removeTask = (index) => {
     tasks.splice(index, 1);
 
@@ -49,6 +61,8 @@
         removeTask(index);
       });
     });
+
+    countDoneTasks();
   };
 
   const onFormSubmit = (e) => {
