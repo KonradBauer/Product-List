@@ -1,31 +1,16 @@
 {
   const tasks = [];
 
-  const render = () => {
-    let contentString = "";
+  const addTask = (newTaskContent) => {
+    tasks.push({ content: newTaskContent });
 
-    for (const task of tasks) {
-      contentString += `
-        <li class="mainContainer__li 
-        ${task.done ? "mainContainer__li--done" : ""}"
-        >
-        <span class="ul__checkbox js-toggleDone ${task.done ? "ul__checkbox--done" : ""}">${
-        task.done ? "✔️" : ""
-      }</span>
-        ${task.content}
-        </li>
-        `;
-    }
+    render();
+  };
 
-    document.querySelector(".js-list").innerHTML = contentString;
+  const removeTask = (index) => {
+    tasks.splice(index, 1);
 
-    const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
-
-    toggleDoneButtons.forEach((toggleDoneButton, index) => {
-      toggleDoneButton.addEventListener("click", () => {
-        toggleTaskDone(index);
-      });
-    });
+    render();
   };
 
   const toggleTaskDone = (index) => {
@@ -34,10 +19,36 @@
     render();
   };
 
-  const addTask = (newTaskContent) => {
-    tasks.push({ content: newTaskContent });
+  const render = () => {
+    let contentString = "";
 
-    render();
+    for (const task of tasks) {
+      contentString += `
+      <li class="mainContainer__li ${task.done ? "mainContainer__li--done" : ""}">
+      <span class="ul__checkbox js-toggleDone ${task.done ? "ul__checkbox--done" : ""}">
+        ${task.done ? "✔️" : ""}
+      </span>
+      ${task.content}
+      <button class="removeButton js-remove">✘</button>
+    </li>`;
+    }
+
+    document.querySelector(".js-list").innerHTML = contentString;
+
+    const toggleDoneButtons = document.querySelectorAll(".js-toggleDone");
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    toggleDoneButtons.forEach((toggleDoneButton, index) => {
+      toggleDoneButton.addEventListener("click", () => {
+        toggleTaskDone(index);
+      });
+    });
+
+    removeButtons.forEach((removeButton, index) => {
+      removeButton.addEventListener("click", () => {
+        removeTask(index);
+      });
+    });
   };
 
   const onFormSubmit = (e) => {
