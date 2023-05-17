@@ -25,6 +25,39 @@
   margin-top: 20px;
 }
 
-.closeModalButton {
+.denyModalButton {
   margin-top: 20px;
+  border: 1px solid #b2b2b2;
+  padding: 5px;
+  margin-top: 20px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.saveModalButton {
+  border: #b2b2b2;
+  padding: 5px;
+  margin-top: 20px;
+  color: white;
+  background-color: #862583;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.denyModalButton:hover {
+  transform: scale(1.025);
+}
+
+.denyModalButton:active {
+  transform: scale(0.9);
+}
+
+.saveModalButton:hover {
+  transform: scale(1.025);
+}
+
+.saveModalButton:active {
+  transform: scale(0.9);
 }

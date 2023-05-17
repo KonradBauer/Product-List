@@ -2,7 +2,7 @@
   const tasks = [];
 
   const openModalButton = document.querySelector(".openModalButton");
-  const closeModalButton = document.querySelector(".closeModalButton");
+  const closeModalButton = document.querySelector(".denyModalButton");
   const modalContainer = document.querySelector(".modalContainer");
 
   openModalButton.addEventListener("click", () => {
