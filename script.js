@@ -50,7 +50,7 @@
       contentString += `
       <li class="mainContainer__li">
       <span class="ul__checkbox js-toggleDone ${task.done ? "ul__checkbox--done" : ""}">
-        ${task.done ? "✔️" : ""} 
+      ${task.done ? '<img src="/images/check.svg" alt="Checkmark">' : ""}
       </span>
       ${task.content}
       <button class="removeButton js-remove">✘</button>
