@@ -49,6 +49,7 @@
   border: none;
   border-bottom: 1px solid #384a5c;
   margin-top: 10px;
+  color: #384a5c;
 }
 
 .modalSelect {
@@ -57,6 +58,7 @@
   border: none;
   border-bottom: 1px solid #384a5c;
   outline: none;
+  color: #384a5c;
 }
 
 .modalButtons {
