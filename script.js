@@ -1,18 +1,6 @@
 {
   const tasks = [];
 
-  const openModalButton = document.querySelector(".openModalButton");
-  const closeModalButton = document.querySelector(".denyModalButton");
-  const modalContainer = document.querySelector(".modalContainer");
-
-  openModalButton.addEventListener("click", () => {
-    modalContainer.style.width = "100%";
-  });
-
-  closeModalButton.addEventListener("click", () => {
-    modalContainer.style.width = "0";
-  });
-
   const addTask = (newTaskContent) => {
     tasks.push({ content: newTaskContent });
 
@@ -91,6 +79,18 @@
     document.querySelector(".js-newTask").focus();
     document.querySelector(".js-form").reset();
   };
+
+  const openModalButton = document.querySelector(".openModalButton");
+  const closeModalButton = document.querySelector(".denyModalButton");
+  const modalContainer = document.querySelector(".modalContainer");
+
+  openModalButton.addEventListener("click", () => {
+    modalContainer.style.width = "100%";
+  });
+
+  closeModalButton.addEventListener("click", () => {
+    modalContainer.style.width = "0";
+  });
 
   const init = () => {
     render();
