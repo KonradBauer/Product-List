@@ -1,6 +1,18 @@
 {
   const tasks = [];
 
+  const openModalButton = document.querySelector(".openModalButton");
+  const closeModalButton = document.querySelector(".closeModalButton");
+  const modalContainer = document.querySelector(".modalContainer");
+
+  openModalButton.addEventListener("click", () => {
+    modalContainer.style.width = "100%";
+  });
+
+  closeModalButton.addEventListener("click", () => {
+    modalContainer.style.width = "0";
+  });
+
   const addTask = (newTaskContent) => {
     tasks.push({ content: newTaskContent });
 
@@ -36,9 +48,9 @@
 
     for (const task of tasks) {
       contentString += `
-      <li class="mainContainer__li ${task.done ? "mainContainer__li--done" : ""}">
+      <li class="mainContainer__li">
       <span class="ul__checkbox js-toggleDone ${task.done ? "ul__checkbox--done" : ""}">
-        ${task.done ? "✔️" : ""}
+        ${task.done ? "✔️" : ""} 
       </span>
       ${task.content}
       <button class="removeButton js-remove">✘</button>
