@@ -70,11 +70,12 @@
 }
 
 .ul__checkbox--done {
-  color: #862583;
+  border: 1px solid #862583;
 }
 
 .removeButton {
   border: none;
+  background: none;
   cursor: pointer;
   margin-left: auto;
 }

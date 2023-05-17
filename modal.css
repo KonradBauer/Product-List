@@ -1,0 +1,30 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: width 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.modalContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  padding: 20px;
+}
+
+.openModalButton {
+  margin-top: 20px;
+}
+
+.closeModalButton {
+  margin-top: 20px;
+}
