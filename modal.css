@@ -12,13 +12,39 @@
 }
 
 .modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 0;
   right: 0;
   width: 20%;
   height: 100%;
   background-color: white;
-  padding: 20px;
+}
+
+.modalTitle {
+  align-self: flex-start;
+  font-size: 14px;
+  padding: 0px 0px 10px 10px;
+  border-bottom: 3px solid blue;
+  width: 90%;
+}
+
+.modalButtons {
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 0px 0px 10px 10px;
+}
+
+.modalImage {
+  border: 1px solid #b2b2b2;
+  border-radius: 50%;
+  display: flex;
+  width: 50%;
+  height: 20%;
 }
 
 .openModalButton {
@@ -28,7 +54,7 @@
 .denyModalButton {
   margin-top: 20px;
   border: 1px solid #b2b2b2;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   margin-top: 20px;
   color: black;
   background-color: white;
@@ -38,7 +64,7 @@
 
 .saveModalButton {
   border: #b2b2b2;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   margin-top: 20px;
   color: white;
   background-color: #862583;
