@@ -18,7 +18,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 20%;
+  width: 30%;
   height: 100%;
   background-color: white;
 }
@@ -44,7 +44,7 @@
 }
 
 .modalInput {
-  width: 100%;
+  width: 180%;
   outline: none;
   border: none;
   border-bottom: 1px solid #384a5c;
@@ -52,7 +52,7 @@
 }
 
 .modalSelect {
-  width: 100%;
+  width: 180%;
   margin-top: 10px;
   border: none;
   border-bottom: 1px solid #384a5c;
@@ -75,7 +75,7 @@
   border: 1px solid #b2b2b2;
   border-radius: 50%;
   display: flex;
-  width: 50%;
+  width: 35%;
   height: 20%;
 }
 
