@@ -1,6 +1,12 @@
 {
   const tasks = [];
 
+  const products = [
+    { id: 0, name: "iPhone 6s Plus 16GB", price: 1000, promoPrice: 649, currency: "$" },
+    { id: 1, name: "iPad 32GB", price: 800, promoPrice: 600, currency: "$" },
+    { id: 2, name: "MacBook Pro", price: 8000, promoPrice: "", currency: "PLN" },
+  ];
+
   const addTask = (newTaskContent) => {
     tasks.push({ content: newTaskContent });
 
@@ -16,7 +22,7 @@
       }
     }
 
-    document.querySelector(".js-doneTaskCount").innerText = +count;
+    document.querySelector(".js-doneTaskCount").innerText = count;
   };
 
   const removeTask = (index) => {
@@ -63,6 +69,25 @@
     });
 
     countDoneTasks();
+    renderProductsTable();
+  };
+
+  const renderProductsTable = () => {
+    const tableBody = document.querySelector(".js-tableBody");
+
+    const tableRows = products.map((product) => {
+      return `
+      <tr class="table__headerRow">
+        <td class="table__headerRow tableData">${product.id}</td>
+        <td class="table__headerRow">${product.name}</td>
+        <td class="table__headerRow">${product.promoPrice}</td>
+        <td class="table__headerRow">${product.price}</td>
+        <td class="table__headerRow">${product.currency}</td>
+      </tr>
+    `;
+    });
+
+    tableBody.innerHTML = tableRows.join("");
   };
 
   const onFormSubmit = (e) => {

@@ -1,0 +1,41 @@
+.mainContainer__tableContent {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 12px;
+  width: 100%;
+}
+
+.table__headerRow {
+  text-align: left;
+  border-bottom: 1px solid #384a5c;
+}
+
+.table__headerRow:hover {
+  background-color: #f5f8fa;
+}
+
+.table__productCount {
+  width: 10%;
+}
+
+.table__productName {
+  width: 33%;
+}
+
+.table__promotionPrice {
+  width: 30%;
+}
+
+.table__price {
+  width: 20%;
+}
+
+.table__currency {
+  width: 10%;
+}
+
+.tableData {
+  padding: 5px 5px 5px 0px;
+}
