@@ -135,8 +135,8 @@
             </div>
             <h3 class="content__title">${product.name}</h3>
             <img class="content__image" src="${product.image}" />
-            <p class="content__promoPrice">${product.promoPrice} ${product.currency}</p>
-            <p class="content__price">${product.price} ${product.currency}</p>
+            <p class="content__price">${product.promoPrice} ${product.currency}</p>
+            <p class="content__promoPrice">${product.price} ${product.currency}</p>
           </div>
         `;
       }
