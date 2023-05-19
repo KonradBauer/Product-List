@@ -92,19 +92,20 @@
   };
 
   const renderTilesProductsData = () => {
-    const tileBody = document.querySelector(".mainContainer__product");
+    const tileBody = document.querySelector(".js-tile");
 
     const tileContent = products.map((product) => {
       return `
-      <div class="discount-percentage">
-      <span class="ribbon"></span>
-    </div>
-    <content class="content openModalButton">
-      <h3 class="content__title">${product.name}</h3>
-      <img class="content__image" src="images/img1.png" width="40%" alt="iPhone 6s Plus 16GB" />
-      <p class="content__promoPrice">${product.promoPrice} ${product.currency}</p>
-      <p class="content__price">${product.price} ${product.currency}</p>
-    </content>
+        <div class="ribbon-container content openModalButton"></div>
+        <div class="discount-percentage">
+          <span class="ribbon"></span>
+        </div>
+        <content class="content openModalButton">
+          <h3 class="content__title">${product.name}</h3>
+          <img class="content__image" src="/images/img1.png" />
+          <p class="content__promoPrice">${product.promoPrice} ${product.currency}</p>
+          <p class="content__price">${product.price} ${product.currency}</p>
+        </content>
       `;
     });
 

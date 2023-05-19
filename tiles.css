@@ -5,14 +5,6 @@
   justify-content: space-between;
 }
 
-.mainContainer__product {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  color: #333;
-  font-weight: bold;
-}
-
 .content {
   text-align: center;
 }
