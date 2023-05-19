@@ -13,22 +13,6 @@
   font-weight: bold;
 }
 
-.mainContainer__product--2 {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  color: #333;
-  font-weight: bold;
-}
-
-.mainContainer__product--3 {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  color: #333;
-  font-weight: bold;
-}
-
 .content {
   text-align: center;
 }
@@ -75,4 +59,8 @@
 .discount-percentage {
   position: relative;
   z-index: 1;
+}
+
+.tile {
+  border: 1px solid black;
 }

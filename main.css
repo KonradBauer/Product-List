@@ -69,21 +69,3 @@ body {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   cursor: pointer;
 }
-.mainContainer__product--2 {
-  padding: 20px;
-  grid-area: 3 / 3 / 5 / 5;
-  background-color: white;
-  border-color: #b2b2b2;
-  border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  cursor: pointer;
-}
-.mainContainer__product--3 {
-  padding: 20px;
-  grid-area: 3 / 5 / 5 / 7;
-  background-color: white;
-  border-color: #b2b2b2;
-  border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-  cursor: pointer;
-}
