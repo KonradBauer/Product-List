@@ -4,7 +4,7 @@
   const products = [
     { id: 0, name: "iPhone 6s Plus 16GB", price: 1000, promoPrice: 649, currency: "$" },
     { id: 1, name: "iPad 32GB", price: 800, promoPrice: 600, currency: "$" },
-    { id: 2, name: "MacBook Pro", price: 8000, promoPrice: "", currency: "PLN" },
+    { id: 2, name: "MacBook Pro", price: 8000, promoPrice: null, currency: "PLN" },
   ];
 
   const addTask = (newTaskContent) => {
@@ -92,21 +92,33 @@
   };
 
   const renderTilesProductsData = () => {
-    const tileBody = document.querySelector(".js-tile");
+    const tileBody = document.querySelector(".mainContainer__product");
 
     const tileContent = products.map((product) => {
-      return `
-        <div class="ribbon-container content openModalButton"></div>
-        <div class="discount-percentage">
-          <span class="ribbon"></span>
-        </div>
-        <content class="content openModalButton">
-          <h3 class="content__title">${product.name}</h3>
-          <img class="content__image" src="/images/img1.png" />
-          <p class="content__promoPrice">${product.promoPrice} ${product.currency}</p>
-          <p class="content__price">${product.price} ${product.currency}</p>
-        </content>
+      if (product.promoPrice === null) {
+        return `
+          <div class="discount-percentage">
+            <span class="ribbon"></span>
+          </div>
+          <content>
+            <h3 class="content__title">${product.name}</h3>
+            <img class="content__image" src="/images/img1.png" />
+            <p class="content__price">${product.price} ${product.currency}</p>
+          </content>
       `;
+      } else {
+        return `
+          <div class="discount-percentage">
+            <span class="ribbon"></span>
+          </div>
+          <content>
+            <h3 class="content__title">${product.name}</h3>
+            <img class="content__image" src="/images/img1.png" />
+            <p class="content__promoPrice">${product.promoPrice} ${product.currency}</p>
+            <p class="content__price">${product.price} ${product.currency}</p>
+          </content>
+      `;
+      }
     });
 
     tileBody.innerHTML = tileContent.join("");
