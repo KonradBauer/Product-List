@@ -1,8 +1,5 @@
-.mainContainer__list--header {
-  color: #333;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
+.content {
+  width: 200px;
 }
 
 .content .content__title {
@@ -12,8 +9,8 @@
 }
 
 .content .content__image {
-  display: block;
-  margin: 0 auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .content .content__price {
