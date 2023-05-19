@@ -4,7 +4,7 @@
   const products = [
     { id: 0, name: "iPhone 6s Plus 16GB", price: 1000, promoPrice: 649, currency: "$" },
     { id: 1, name: "iPad 32GB", price: 800, promoPrice: 600, currency: "$" },
-    { id: 2, name: "MacBook Pro", price: 8000, promoPrice: null, currency: "PLN" },
+    { id: 2, name: "MacBook Pro", price: 8000, promoPrice: "", currency: "PLN" },
   ];
 
   const addTask = (newTaskContent) => {
@@ -95,7 +95,7 @@
     const tileBody = document.querySelector(".mainContainer__product");
 
     const tileContent = products.map((product) => {
-      if (product.promoPrice === null) {
+      if (product.promoPrice === "") {
         return `
           <div class="discount-percentage">
             <span class="ribbon"></span>
