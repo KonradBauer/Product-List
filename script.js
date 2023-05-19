@@ -112,13 +112,15 @@
     tableBody.innerHTML = tableRows.join("");
   };
 
-  const renderTilesProductsData = () => {
-    const tileBody = document.querySelector(".mainContainer__product");
+  let selectedProductIndex = null; // zmienna globalna przechowująca indeks aktualnie wybranego produktu
 
-    const tileContent = products.map((product) => {
+  const renderTilesProductsData = () => {
+    const tileBody = document.querySelector(".js-tile");
+
+    const tileContent = products.map((product, index) => {
       if (product.promoPrice === "") {
         return `
-          <div class="content">
+          <div class="content" onclick="openModal(${index})"> <!-- Przekazanie indeksu produktu do openModal() -->
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -129,7 +131,7 @@
         `;
       } else {
         return `
-          <div class="content">
+          <div class="content" onclick="openModal(${index})"> <!-- Przekazanie indeksu produktu do openModal() -->
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -145,6 +147,24 @@
     tileBody.innerHTML = tileContent.join("");
   };
 
+  const openModal = (index) => {
+    selectedProductIndex = product.id; // Przypisz indeks produktu do zmiennej selectedProductIndex
+    let selectedProductIndex = null;
+    const product = products[selectedProductIndex];
+    const modalImage = document.querySelector(".modalImage");
+    const nameInput = document.querySelector(".modalInput");
+    const priceInput = document.querySelectorAll(".modalInput")[1];
+    const promoPriceInput = document.querySelectorAll(".modalInput")[2];
+    const currencySelect = document.querySelector(".modalSelect");
+
+    modalImage.src = product.image;
+    nameInput.value = product.name;
+    priceInput.value = product.price;
+    promoPriceInput.value = product.promoPrice;
+    currencySelect.value = product.currency;
+
+    modalContainer.style.width = "100%";
+  };
   const onFormSubmit = (e) => {
     e.preventDefault();
 
@@ -159,6 +179,21 @@
     document.querySelector(".js-newTask").focus();
     document.querySelector(".js-form").reset();
   };
+  const renderModalData = (product) => {
+    const modalTitle = document.querySelector(".modalTitle");
+    const modalImage = document.querySelector(".modalImage");
+    const modalNameInput = document.querySelector(".modalInput");
+    const modalPriceInput = document.querySelectorAll(".modalInput")[1];
+    const modalPromoPriceInput = document.querySelectorAll(".modalInput")[2];
+    const modalCurrencySelect = document.querySelector(".modalSelect");
+
+    modalTitle.innerText = `Edycja produktu: ${product.name}`;
+    modalImage.src = product.image;
+    modalNameInput.value = product.name;
+    modalPriceInput.value = product.price;
+    modalPromoPriceInput.value = product.promoPrice;
+    modalCurrencySelect.value = product.currency;
+  };
 
   const openModalButton = document.querySelector(".openModalButton");
   const closeModalButton = document.querySelector(".denyModalButton");
@@ -166,11 +201,41 @@
 
   openModalButton.addEventListener("click", () => {
     modalContainer.style.width = "100%";
+
+    // Pobierz indeks produktu z atrybutu "data-index"
+    const productIndex = parseInt(openModalButton.getAttribute("data-index"));
+    const product = products[productIndex];
+
+    renderModalData(product);
   });
 
   closeModalButton.addEventListener("click", () => {
     modalContainer.style.width = "0";
   });
+
+  const updateProduct = () => {
+    const nameInput = document.querySelector(".modalInput");
+    const priceInput = document.querySelectorAll(".modalInput")[1];
+    const promoPriceInput = document.querySelectorAll(".modalInput")[2];
+    const currencySelect = document.querySelector(".modalSelect");
+
+    const updatedProduct = {
+      ...products[selectedProductIndex],
+      name: nameInput.value,
+      price: parseFloat(priceInput.value),
+      promoPrice: parseFloat(promoPriceInput.value),
+      currency: currencySelect.value,
+    };
+
+    products[selectedProductIndex] = updatedProduct;
+
+    closeModal();
+    renderProductsTable(); // Zaktualizuj tabelę z produktami
+    renderTilesProductsData(); // Zaktualizuj kafelki z produktami
+  };
+
+  const saveModalButton = document.querySelector(".saveModalButton");
+  saveModalButton.addEventListener("click", updateProduct);
 
   const init = () => {
     render();
