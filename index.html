@@ -66,23 +66,7 @@
           </table>
         </div>
       </div>
-      <div class="mainContainer__product ribbon-container"></div>
-      <div class="mainContainer__product">
-        <content class="content openModalButton">
-          <h3 class="content__title">iPad Pro 32GB</h3>
-          <img class="content__image" src="images/img2.png" width="50%" alt="iPad Pro 32GB" />
-          <p class="content__promoPrice">cena</p>
-          <p class="content__price">cena</p>
-        </content>
-      </div>
-      <div class="mainContainer__product">
-        <content class="content openModalButton">
-          <h3 class="content__title">MacBook Pro</h3>
-          <img class="content__image" src="images/img3.png" width="100%" alt="MacBook Pro" />
-          <p class="content__promoPrice">cena</p>
-          <p class="content__price">cena</p>
-        </content>
-      </div>
+      <div class="js-tile mainContainer__product ribbon-container content openModalButton"></div>
     </MainContainer>
     <div class="modalContainer">
       <div class="modalContent">
@@ -100,10 +84,10 @@
           </div>
           <div class="modalLabel">
             <label>Cena</label>
-            <input type="number" class="modalInput" />
+            <input type="number" min="1" class="modalInput" />
             <div class="modalLabel">
               <label>Promocyjna cena</label>
-              <input type="number" class="modalInput" />
+              <input type="number" min="1" class="modalInput" />
             </div>
           </div>
           <label for="currencies">Waluta:</label>
