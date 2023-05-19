@@ -2,9 +2,30 @@
   const tasks = [];
 
   const products = [
-    { id: 0, name: "iPhone 6s Plus 16GB", price: 1000, promoPrice: 649, currency: "$" },
-    { id: 1, name: "iPad 32GB", price: 800, promoPrice: 600, currency: "$" },
-    { id: 2, name: "MacBook Pro", price: 8000, promoPrice: "", currency: "PLN" },
+    {
+      id: 0,
+      name: "iPhone 6s Plus 16GB",
+      price: 1000,
+      promoPrice: 649,
+      currency: "$",
+      image: "images/img1.png",
+    },
+    {
+      id: 1,
+      name: "iPad 32GB",
+      price: 800,
+      promoPrice: 600,
+      currency: "$",
+      image: "images/img2.png",
+    },
+    {
+      id: 2,
+      name: "MacBook Pro",
+      price: 8000,
+      promoPrice: "",
+      currency: "PLN",
+      image: "images/img3.png",
+    },
   ];
 
   const addTask = (newTaskContent) => {
@@ -97,27 +118,27 @@
     const tileContent = products.map((product) => {
       if (product.promoPrice === "") {
         return `
-          <div class="discount-percentage">
-            <span class="ribbon"></span>
-          </div>
-          <content>
+          <div class="content">
+            <div class="discount-percentage">
+              <span class="ribbon"></span>
+            </div>
             <h3 class="content__title">${product.name}</h3>
-            <img class="content__image" src="/images/img1.png" />
+            <img class="content__image" src="${product.image}" />
             <p class="content__price">${product.price} ${product.currency}</p>
-          </content>
-      `;
+          </div>
+        `;
       } else {
         return `
-          <div class="discount-percentage">
-            <span class="ribbon"></span>
-          </div>
-          <content>
+          <div class="content">
+            <div class="discount-percentage">
+              <span class="ribbon"></span>
+            </div>
             <h3 class="content__title">${product.name}</h3>
-            <img class="content__image" src="/images/img1.png" />
+            <img class="content__image" src="${product.image}" />
             <p class="content__promoPrice">${product.promoPrice} ${product.currency}</p>
             <p class="content__price">${product.price} ${product.currency}</p>
-          </content>
-      `;
+          </div>
+        `;
       }
     });
 
