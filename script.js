@@ -4,6 +4,7 @@
   const products = [
     {
       id: 0,
+      productIndex: 0,
       name: "iPhone 6s Plus 16GB",
       price: 1000,
       promoPrice: 649,
@@ -12,6 +13,7 @@
     },
     {
       id: 1,
+      productIndex: 1,
       name: "iPad 32GB",
       price: 800,
       promoPrice: 600,
@@ -20,6 +22,7 @@
     },
     {
       id: 2,
+      productIndex: 2,
       name: "MacBook Pro",
       price: 8000,
       promoPrice: "",
@@ -112,15 +115,13 @@
     tableBody.innerHTML = tableRows.join("");
   };
 
-  let selectedProductIndex = null; // zmienna globalna przechowująca indeks aktualnie wybranego produktu
-
   const renderTilesProductsData = () => {
     const tileBody = document.querySelector(".js-tile");
 
     const tileContent = products.map((product, index) => {
       if (product.promoPrice === "") {
         return `
-          <div class="content" onclick="openModal(${index})"> <!-- Przekazanie indeksu produktu do openModal() -->
+          <div class="content" onclick="openModal(${index})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -131,7 +132,7 @@
         `;
       } else {
         return `
-          <div class="content" onclick="openModal(${index})"> <!-- Przekazanie indeksu produktu do openModal() -->
+          <div class="content" onclick="openModal(${index})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -147,24 +148,6 @@
     tileBody.innerHTML = tileContent.join("");
   };
 
-  const openModal = (index) => {
-    selectedProductIndex = product.id; // Przypisz indeks produktu do zmiennej selectedProductIndex
-    let selectedProductIndex = null;
-    const product = products[selectedProductIndex];
-    const modalImage = document.querySelector(".modalImage");
-    const nameInput = document.querySelector(".modalInput");
-    const priceInput = document.querySelectorAll(".modalInput")[1];
-    const promoPriceInput = document.querySelectorAll(".modalInput")[2];
-    const currencySelect = document.querySelector(".modalSelect");
-
-    modalImage.src = product.image;
-    nameInput.value = product.name;
-    priceInput.value = product.price;
-    promoPriceInput.value = product.promoPrice;
-    currencySelect.value = product.currency;
-
-    modalContainer.style.width = "100%";
-  };
   const onFormSubmit = (e) => {
     e.preventDefault();
 
@@ -202,7 +185,6 @@
   openModalButton.addEventListener("click", () => {
     modalContainer.style.width = "100%";
 
-    // Pobierz indeks produktu z atrybutu "data-index"
     const productIndex = parseInt(openModalButton.getAttribute("data-index"));
     const product = products[productIndex];
 
@@ -230,8 +212,8 @@
     products[selectedProductIndex] = updatedProduct;
 
     closeModal();
-    renderProductsTable(); // Zaktualizuj tabelę z produktami
-    renderTilesProductsData(); // Zaktualizuj kafelki z produktami
+    renderProductsTable();
+    renderTilesProductsData();
   };
 
   const saveModalButton = document.querySelector(".saveModalButton");
