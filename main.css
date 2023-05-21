@@ -60,6 +60,10 @@ body {
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
+  @media (max-width: 768px) {
+    grid-column: 1;
+  }
 }
 
 .mainContainer__table--header {
