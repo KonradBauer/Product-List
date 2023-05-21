@@ -9,5 +9,7 @@
 <li>JavaScript (ES6)</li>
 <li>Arrow functions</li>
 <li>CSS</li>
+  <li>Flex</li>
+  <li>Grid</li>
 </ol>
 
