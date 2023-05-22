@@ -61,7 +61,7 @@
     render();
   };
 
-  const render = () => {
+  const renderTodosList = () => {
     let contentString = "";
 
     for (const task of tasks) {
@@ -91,10 +91,6 @@
         removeTask(index);
       });
     });
-
-    countDoneTasks();
-    renderProductsTable();
-    renderTilesProductsData();
   };
 
   const renderProductsTable = () => {
@@ -118,10 +114,10 @@
   const renderTilesProductsData = () => {
     const tileBody = document.querySelector(".js-tile");
 
-    const tileContent = products.map((product, index) => {
+    const tileContent = products.map((product, productIndex) => {
       if (product.promoPrice === "") {
         return `
-          <div class="content" onclick="openModal(${index})">
+          <div class="content" onclick="openModal(${productIndex})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -132,7 +128,7 @@
         `;
       } else {
         return `
-          <div class="content" onclick="openModal(${index})">
+          <div class="content" onclick="openModal(${productIndex})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -169,6 +165,7 @@
     const modalPriceInput = document.querySelectorAll(".modalInput")[1];
     const modalPromoPriceInput = document.querySelectorAll(".modalInput")[2];
     const modalCurrencySelect = document.querySelector(".modalSelect");
+    const modalCurrencySelected = document.querySelector(".modalRate");
 
     modalTitle.innerText = `Edycja produktu: ${product.name}`;
     modalImage.src = product.image;
@@ -185,7 +182,7 @@
   openModalButton.addEventListener("click", () => {
     modalContainer.style.width = "100%";
 
-    const productIndex = parseInt(openModalButton.getAttribute("data-index"));
+    const productIndex = parseInt(openModalButton.getAttribute("productIndex"));
     const product = products[productIndex];
 
     renderModalData(product);
@@ -202,18 +199,24 @@
     const currencySelect = document.querySelector(".modalSelect");
 
     const updatedProduct = {
-      ...products[selectedProductIndex],
+      ...products[productIndex],
       name: nameInput.value,
       price: parseFloat(priceInput.value),
       promoPrice: parseFloat(promoPriceInput.value),
       currency: currencySelect.value,
     };
 
-    products[selectedProductIndex] = updatedProduct;
+    products[productIndex] = updatedProduct;
 
     closeModal();
+  };
+
+  const render = () => {
+    renderTodosList();
+    countDoneTasks();
     renderProductsTable();
     renderTilesProductsData();
+    updateProduct();
   };
 
   const saveModalButton = document.querySelector(".saveModalButton");

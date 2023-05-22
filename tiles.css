@@ -45,3 +45,8 @@
   position: relative;
   z-index: 1;
 }
+
+.tile {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

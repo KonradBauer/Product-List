@@ -12,6 +12,10 @@ body {
   font-size: 14px;
   color: #384a5c;
   background-color: #f5f8fa;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 .h1 {
@@ -37,6 +41,11 @@ body {
   max-width: 1180px;
   background-color: #f5f8fa;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding: 5px;
+  }
 }
 
 .mainContainer__list {
@@ -65,10 +74,6 @@ body {
   border-color: #b2b2b2;
   border-radius: 10px;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-
-  @media (max-width: 768px) {
-    grid-column: 1;
-  }
 }
 
 .mainContainer__table--header {
