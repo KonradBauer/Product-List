@@ -1,25 +1,24 @@
 .content {
-  width: 200px;
+  display: flex;
 }
 
-.content .content__title {
+.content__title {
   text-align: left;
   margin: 0 0 15px;
   font-size: 14px;
 }
 
-.content .content__image {
-  max-width: 100%;
-  object-fit: contain;
+.content__image {
+  width: 45%;
 }
 
-.content .content__price {
+.content__price {
   text-align: center;
   color: #333;
   font-weight: bold;
 }
 
-.content .content__promoPrice {
+.content__promoPrice {
   text-align: center;
   text-decoration: line-through;
 }
@@ -47,6 +46,31 @@
 }
 
 .tile {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.tileRendered {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-color: #b2b2b2;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.tile img {
+  display: block;
+  margin: auto;
+  aspect-ratio: 4/3;
 }

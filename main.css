@@ -12,9 +12,12 @@ body {
   font-size: 14px;
   color: #384a5c;
   background-color: #f5f8fa;
+  max-width: 1180px;
+  margin: 0 auto;
 
   @media (max-width: 768px) {
     font-size: 12px;
+    padding: 10px;
   }
 }
 
@@ -38,7 +41,6 @@ body {
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  max-width: 1180px;
   background-color: #f5f8fa;
   gap: 10px;
 

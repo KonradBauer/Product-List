@@ -117,7 +117,8 @@
     const tileContent = products.map((product, productIndex) => {
       if (product.promoPrice === "") {
         return `
-          <div class="content" productIndex=${productIndex} onclick="openModal(${productIndex})">
+        <div class="tileRendered">
+          <div productIndex=${productIndex} onclick="openModal(${productIndex})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -125,10 +126,12 @@
             <img class="content__image" src="${product.image}" />
             <p class="content__price">${product.price} ${product.currency}</p>
           </div>
+          </div>
         `;
       } else {
         return `
-          <div class="content" productIndex=${productIndex} onclick="openModal(${productIndex})">
+        <div class="tileRendered">
+          <div productIndex=${productIndex} onclick="openModal(${productIndex})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -136,6 +139,7 @@
             <img class="content__image" src="${product.image}" />
             <p class="content__price">${product.promoPrice} ${product.currency}</p>
             <p class="content__promoPrice">${product.price} ${product.currency}</p>
+          </div>
           </div>
         `;
       }
