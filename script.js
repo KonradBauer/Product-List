@@ -171,6 +171,7 @@
     document.querySelector(".js-newTask").focus();
     document.querySelector(".js-form").reset();
   };
+
   const renderModalData = (product) => {
     const modalTitle = document.querySelector(".modalTitle");
     const modalImage = document.querySelector(".modalImage");
@@ -204,34 +205,12 @@
     modalContainer.style.width = "0";
   });
 
-  const updateProduct = () => {
-    const nameInput = document.querySelector(".modalInput");
-    const priceInput = document.querySelectorAll(".modalInput")[1];
-    const promoPriceInput = document.querySelectorAll(".modalInput")[2];
-    const currencySelect = document.querySelector(".modalSelect");
-
-    const updatedProduct = {
-      ...products[productIndex],
-      name: nameInput.value,
-      price: parseFloat(priceInput.value),
-      promoPrice: parseFloat(promoPriceInput.value),
-      currency: currencySelect.value,
-    };
-
-    products[productIndex] = updatedProduct;
-
-    closeModal();
-  };
-
   const render = () => {
     renderTodosList();
     countDoneTasks();
     renderProductsTable();
     renderTilesProductsData();
   };
-
-  const saveModalButton = document.querySelector(".saveModalButton");
-  saveModalButton.addEventListener("click", updateProduct);
 
   const init = () => {
     render();
