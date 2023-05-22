@@ -111,6 +111,17 @@
     tableBody.innerHTML = tableRows.join("");
   };
 
+  const calculatePromo = (product) => {
+    if (product.promoPrice !== "") {
+      const promoPercentage = ((product.price - product.promoPrice) / product.price) * 100;
+      return promoPercentage.toFixed(0);
+    }
+
+    products.forEach((product) => {
+      const promoPercentage = calculatePromo(product);
+    });
+  };
+
   const renderTilesProductsData = () => {
     const tileBody = document.querySelector(".js-tile");
 
@@ -118,9 +129,7 @@
       if (product.promoPrice === "") {
         return `
         <div class="tileRendered">
-          <div productIndex=${productIndex} onclick="openModal(${productIndex})">
-            <div class="discount-percentage">
-              <span class="ribbon"></span>
+          <div productIndex=(${productIndex}) onclick="openModal(${productIndex})">
             </div>
             <h3 class="content__title">${product.name}</h3>
             <img src="${product.image}" />
@@ -131,9 +140,9 @@
       } else {
         return `
         <div class="tileRendered">
-          <div productIndex=${productIndex} onclick="openModal(${productIndex})">
-            <div class="discount-percentage">
-              <span class="ribbon"></span>
+          <div productIndex="${product.productIndex}" onclick="openModal(${product.productIndex})">
+          <div class="discount-percentage">
+          <span class="ribbon">-${calculatePromo(product)}%</span>
             </div>
             <h3 class="content__title">${product.name}</h3>
             <img src="${product.image}" />
