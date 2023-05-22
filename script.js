@@ -117,7 +117,7 @@
     const tileContent = products.map((product, productIndex) => {
       if (product.promoPrice === "") {
         return `
-          <div class="content" onclick="openModal(${productIndex})">
+          <div class="content" productIndex=${productIndex} onclick="openModal(${productIndex})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -128,7 +128,7 @@
         `;
       } else {
         return `
-          <div class="content" onclick="openModal(${productIndex})">
+          <div class="content" productIndex=${productIndex} onclick="openModal(${productIndex})">
             <div class="discount-percentage">
               <span class="ribbon"></span>
             </div>
@@ -165,7 +165,6 @@
     const modalPriceInput = document.querySelectorAll(".modalInput")[1];
     const modalPromoPriceInput = document.querySelectorAll(".modalInput")[2];
     const modalCurrencySelect = document.querySelector(".modalSelect");
-    const modalCurrencySelected = document.querySelector(".modalRate");
 
     modalTitle.innerText = `Edycja produktu: ${product.name}`;
     modalImage.src = product.image;
@@ -216,7 +215,6 @@
     countDoneTasks();
     renderProductsTable();
     renderTilesProductsData();
-    updateProduct();
   };
 
   const saveModalButton = document.querySelector(".saveModalButton");
