@@ -4,6 +4,9 @@
 
 ## Check **[Demo](https://konradbauer.github.io/Product-List/)**
 
+## Screenshot
+![](https://github.com/KonradBauer/Product-List/blob/main/images/muscode.png?raw=true)
+
 ### Used technologies:
 <ol>
 <li>JavaScript (ES6)</li>
