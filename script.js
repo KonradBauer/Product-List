@@ -31,6 +31,15 @@
     },
   ];
 
+  const elements = document.querySelectorAll(".js-tile");
+
+  elements.forEach((element, productIndex) => {
+    element.addEventListener("click", () => {
+      element.setAttribute("productIndex", productIndex);
+      console.log("Dodano atrybut productIndex:", productIndex);
+    });
+  });
+
   const addTask = (newTaskContent) => {
     tasks.push({ content: newTaskContent });
 
