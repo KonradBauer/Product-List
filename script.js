@@ -55,7 +55,7 @@
       }
     }
 
-    document.querySelector(".js-doneTaskCount").innerText = count;
+    document.querySelector(".js-doneTaskCount").innerText = `Wykonane: ${count}`;
   };
 
   const removeTask = (index) => {
