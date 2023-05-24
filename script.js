@@ -125,10 +125,6 @@
       const promoPercentage = ((product.price - product.promoPrice) / product.price) * 100;
       return promoPercentage.toFixed(0);
     }
-
-    products.forEach((product) => {
-      const promoPercentage = calculatePromo(product);
-    });
   };
 
   const renderTilesProductsData = () => {
