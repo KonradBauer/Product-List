@@ -138,7 +138,7 @@
       if (product.promoPrice === "") {
         return `
         <div class="tileRendered">
-          <div productIndex=(${productIndex}) onclick="openModal(${productIndex})">
+          <div productIndex=${productIndex}">
             </div>
             <h3 class="content__title">${product.name}</h3>
             <img src="${product.image}" />
@@ -149,7 +149,7 @@
       } else {
         return `
         <div class="tileRendered">
-          <div productIndex="${product.productIndex}" onclick="openModal(${product.productIndex})">
+          <div productIndex="${productIndex}">
           <div class="discount-percentage">
           <span class="ribbon">-${calculatePromo(product)}%</span>
             </div>
